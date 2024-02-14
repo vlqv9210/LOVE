@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.item {
+  width: 200px;
+  height: 300px;
+  list-style-type: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+  transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+
+  &:nth-child(1), &:nth-child(2) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+  }
+
+  &:nth-child(3) { left: 50%; }
+  &:nth-child(4) { left: calc(50% + 220px); }
+  &:nth-child(5) { left: calc(50% + 440px); }
+  &:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
+}
+
+.content {
+  width: min(30vw,400px);
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  font: 400 0.85rem helvetica,sans-serif;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+  opacity: 0;
+  display: none;
+
+  & .title {
+    font-family: 'arial-black';
+    text-transform: uppercase;
+  }
+
+  & .description {
+    line-height: 1.7;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  & button {
+    width: fit-content;
+    background-color: rgba(0,0,0,0.1);
+    color: white;
+    border: 2px solid white;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    cursor: pointer;
+  }
+}
+
+.item:nth-of-type(2) .content {
+  display: block;
+  animation: show 0.75s ease-in-out 0.3s forwards;
+}
+
+@keyframes show {
+  0% {
+    filter: blur(5px);
+    transform: translateY(calc(-50% + 75px));
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.nav {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  user-select: none;
+
+  & .btn {
+    background-color: rgba(255,255,255,0.5);
+    color: rgba(0,0,0,0.7);
+    border: 2px solid rgba(0,0,0,0.6);
+    margin: 0 0.25rem;
+    padding: 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(255,255,255,0.3);
+    }
+  }
+}
+
+@media (width > 650px) and (width < 900px) {
+  .content {
+    & .title        { font-size: 1rem; }
+    & .description  { font-size: 0.7rem; }
+    & button        { font-size: 0.7rem; }
+  }
+  .item {
+    width: 160px;
+    height: 270px;
+
+    &:nth-child(3) { left: 50%; }
+    &:nth-child(4) { left: calc(50% + 170px); }
+    &:nth-child(5) { left: calc(50% + 340px); }
+    &:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
+  }
+}
+
+@media (width < 650px) {
+  .content {
+    & .title        { font-size: 0.9rem; }
+    & .description  { font-size: 0.65rem; }
+    & button        { font-size: 0.7rem; }
+  }
+  .item {
+    width: 130px;
+    height: 220px;
+
+    &:nth-child(3) { left: 50%; }
+    &:nth-child(4) { left: calc(50% + 140px); }
+    &:nth-child(5) { left: calc(50% + 280px); }
+    &:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.valentineCard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ff8fa3;
+  overflow: hidden;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, .4);
+}
+
+
+.valentineCard:before {
+  content: "";
+  position: absolute;
+  background-color: #ffb3c1;
+  width: 20vw; 
+  height: 20vw; /* Adjusted to make the circle larger */
+  max-width: 200px; /* Added max-width to limit the size */
+  max-height: 200px; /* Added max-height to limit the size */
+  border-radius: 50%;
+  top: calc(50% - 100px); /* Adjusted to center vertically */
+  left: -10vw; /* Adjusted to move the circle left */
+  box-shadow: 12vw 4vw #ffb3c1, 26vw 2vw #ffb3c1, 38vw 4vw #ffb3c1, 52vw -1vw #ffb3c1, 68vw 4vw #ffb3c1; /* Adjusted shadow positions */
+}
+
+.valentineCard:after {
+  content: "";
+  position: absolute;
+  background-color: #ffccd5;
+  width: 25vw; /* Adjusted to make the circle larger */
+  height: 25vw; /* Adjusted to make the circle larger */
+  max-width: 250px; /* Added max-width to limit the size */
+  max-height: 250px; /* Added max-height to limit the size */
+  border-radius: 50%;
+  top: calc(50% - 125px); /* Adjusted to center vertically */
+  left: -20vw; /* Adjusted to move the circle left */
+  box-shadow: 13vw 5vw #ffccd5, 30vw 10vw #ffccd5, 50vw 4vw #ffccd5, 65vw 7vw #ffccd5, 82vw 7vw #ffccd5, 95vw 3vw #ffccd5; /* Adjusted shadow positions */
+}
+
+.clouds {
+  position: absolute;
+  width: 25vw; /* Adjusted to make the clouds larger */
+  height: 25vw; /* Adjusted to make the clouds larger */
+  max-width: 250px; /* Added max-width to limit the size */
+  max-height: 250px; /* Added max-height to limit the size */
+  border-radius: 50%;
+  background-color: #fff0f3;
+  z-index: 5;
+  top: calc(50% + 50px); /* Adjusted to position below the hearts */
+  left: -20vw; /* Adjusted to move the clouds left */
+  box-shadow: 14vw 7vw #fff0f3, 31vw 2vw #fff0f3, 43vw 4vw #fff0f3, 62vw 2vw #fff0f3, 79vw 1vw #fff0f3, 93vw 2vw #fff0f3; /* Adjusted shadow positions */
+}
+
+.hearts {
+  position: absolute;
+  z-index: 2;
+}
+
+.heartOne {
+  position: absolute;
+  left: 20vw; /* Adjusted to move the heart left */
+  top: 45vh; /* Adjusted to move the heart lower */
+  width: 10vw; /* Adjusted to make the heart larger */
+  height: 10vw; /* Adjusted to make the heart larger */
+  max-width: 100px; /* Added max-width to limit the size */
+  max-height: 100px; /* Added max-height to limit the size */
+  animation: up 4s linear forwards 1s;
+}
+
+.heartTwo {
+  position: absolute;
+  left: 55vw; /* Adjusted to move the heart right */
+  top: 40vh; /* Adjusted to move the heart lower */
+  width: 12vw; /* Adjusted to make the heart larger */
+  height: 12vw; /* Adjusted to make the heart larger */
+  max-width: 120px; /* Added max-width to limit the size */
+  max-height: 120px; /* Added max-height*/
+  animation: up 5s linear forwards 1.8s;
+}
+
+
+.heartThree {
+  position: absolute;
+  left:85px;
+  top:415px;
+  animation: up 5s linear forwards 3s;
+}
+
+.heartFour {
+  position: absolute;
+  left:320px;
+  top:380px;
+  animation: upTwo 9s linear infinite 3.5s;
+}
+
+.heartFive {
+  position: absolute;
+  left:150px;
+  top:400px;
+  animation: upTwo 13s linear infinite 4.5s;
+}
+
+.right-side:before, .right-side:after {
+  position: absolute;
+  content:"";
+  transform-origin: left;
+  animation: move 1s ease infinite;
+}
+
+.right-side:before {
+  border-radius:50% 50% 50% 0;
+  width:21px;
+  height:20px;
+  background-color: #c9184a;
+  left:-0.26px;
+}
+
+.right-side:after {
+  height:0;
+  width:0;
+  border-bottom:10px solid transparent;
+  border-left: 15px solid #c9184a;
+  top:19px;
+  left:-0.26px;
+}
+
+@keyframes move {
+  0%, 100% {transform: rotateY(0);}
+  50% {transform: rotateY(-45deg);}
+}
+
+.left-side:before, .left-side:after {
+  position: absolute;
+  content:"";
+  transform-origin: right;
+  animation: move 1s ease infinite;
+}
+
+.left-side:before {
+  border-radius:50% 50% 0 50%;
+  width:20px;
+  height:20px;
+  left:-20.7px;
+  background-color: #ff4d6d;
+}
+
+.left-side:after {
+  height:0;
+  width:0;
+  left:-15px;
+  border-bottom:10px solid transparent;
+  border-right: 15px solid #ff4d6d;
+  top:19px;
+}
+
+@keyframes up {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-200px);}
+}
+
+@keyframes upTwo {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-450px);}
+}
+
+.text {
+  position: absolute;
+  color: #800f2f;
+  font-size: 50px; 
+  font-family: 'Pacifico', cursive;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  left: -1%; /* Adjusted the left property to move the text slightly towards the left */
+  transform: translate(-50%, -50%); /* Centering horizontally and vertically */
+  z-index: 3;
+  animation: up 1s ease forwards;
+  transition: 0.2s;
+}
+
+
+
+.hover {
+  color: white;
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+}
+
+.text:hover span {
+  display: none;
+}
+
+.text:hover:before {
+  content:"Babiii oiii!! Babiii its been 365 days with you. We've been through a lot and I'm growing as you are growing. Babii, but just sometimes, sometimes please chieu meeeeee I'M A BABYYY!!!!! I love you so much and Happy Valentines my cun";
+  font-size:25px;
+}

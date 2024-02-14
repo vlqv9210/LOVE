@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <ul class='slider'>
+    <li class='item' style="background-image: url('26.jpeg')">
+      <div class='content'>
+        <h2 class='title'>Last Gift</h2>
+        <p class='description'> Babiii aaaaa!! I love you so much! 
+          And of course, my last gift for you is my message only for u ^^ </p>
+        <button id="valentineCardButton">WORDS OF AFFIRMATION</button>
+      </div>
+    </li>
+    <li class='item' style="background-image: url('11.jpeg')">
+      <div class='content'>
+        <h2 class='title'>FIRST PRESENT</h2>
+        <p class='description'> Welp babii! I will introduce you to the first gift for today
+          Of course I will do it based on 5 LANGUAGES OF LOVE :3
+        </p>
+        <button onclick="showFullScreenSweaterImage()">PHYSICAL TOUCH</button>
+        <img id="sweaterImage" src="cun.jpg" style="display: none;">
+      </div>
+    </li>    
+    
+    </li>
+    <li class='item' style="background-image: url('8.jpeg')">
+      <div class='content'>
+        <h2 class='title'>SECOND PRESENT</h2>
+        <p class='description'>
+          I love this present the most! Babiiiii this will be the figure, a friend, a symbol 
+          that represents you and only you. Happy Valentine's my babii 
+        </p>
+        <button onclick="showFullScreenFunkoImage()">GIVING GIFTS</button>
+        <img id="FunkoImage" src="cun2.png" style="display: none;">
+      </div>
+    </li>
+
+    <li class='item' style="background-image: url('17.jpeg')">
+      <div class='content'>
+        <h2 class='title'>EXTRA CREDIT</h2>
+        <p class='description'>
+          HEHE this is our extra credits moments since I have collected them, so proud of myself :D 
+        </p>
+        <button onclick="playFullScreenVideoExtraCredit()">BUBBLE MOMENTS</button>
+        <video id="bubbleVideo" style="display: none;">
+          <source src="2.MOV" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+    </li>
+    <li class='item' style="background-image: url('27.jpeg')">
+      <div class='content'>
+        <h2 class='title'>Third Present</h2>
+        <p class='description'> I spent so much time for this and I really hope you will cry because of it :D Babiii, a little note is that: Discover Everything!!!  </p>
+        <button>QUALITY TIME</button>
+      </div>
+    </li>
+
+    <li class='item' style="background-image: url('31.jpeg')">
+      <div class='content'>
+        <h2 class='title'>Fourth Present</h2>
+        <p class='description'> Hmmmm, it's a hard choice to decide which gift is fourth
+          I will just go the normal way - 365 days together babiiii
+        And this is: ACT OF SERVICE </p>
+        <button onclick="playFullScreenVideo()">ACT OF SERVICE</button>
+        <video id="myVideo" controls style="display: none;">
+          <source src="1.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </li>  
+
+
+  </ul>
+  <nav class='nav'>
+    <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+    <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+  </nav>
+</main>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="script.js" defer></script>
+</body>
+</html>
